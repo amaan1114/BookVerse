@@ -1,0 +1,16 @@
+body {
+  background-image: url('assets/BookVerseBg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* for parallax-style effect */
+  color: white; /* optional for visibility */
+}
+
+
+@media screen and (max-width:426px) {
+  .paraout{
+    display: none;
+}
+
+}
