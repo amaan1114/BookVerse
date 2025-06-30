@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom"
 import { useState } from "react"
 import { useEffect } from "react";
+import { ClipLoader } from "react-spinners";
 import axios from "axios";
 function BookDetails(){
    const { id } = useParams(); 
   const [book, setBook] = useState(null);
   let srcimg=null
-
-
+      const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     console.log("📡 Search API called for query:");
@@ -17,7 +17,30 @@ function BookDetails(){
 
   }, [id]);
 
-  if (!book) return <p>Loading...</p>;
+   if (!book) {return(
+         <div className="container bg-transparent d-flex justify-content-center align-items-center " style={{width:'100vw', height:'100vh', color:'white'}}>
+        <ClipLoader
+                        color='white'
+                        loading={true}
+                        size={150}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                        
+                    />
+            </div>        
+            );}else{
+               <div className="container bg-transparent d-flex justify-content-center align-items-center " style={{width:'100vw', height:'100vh', color:'white'}}>
+              <ClipLoader
+                        color='white'
+                        loading={false}
+                        size={150}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                        
+                    />
+            </div>      
+
+            }
 
   if(book.thumbnail?.replace('zoom=1', 'zoom=2')){
     srcimg=book.thumbnail?.replace('zoom=1', 'zoom=2')

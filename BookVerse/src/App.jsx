@@ -41,31 +41,30 @@ AOS.init({
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
+return (
+    <div className="d-flex flex-column min-vh-100">
+      <BrowserRouter>
+        <NavBar />
 
-  return (
-    <>
+        {/* Main content fills available space */}
+        <main className="flex-grow-1">
+          <Routes>
+            <Route path="/" element={<BookSections />} />
+            <Route path="/BookDetails/:id" element={<BookDetails />} />
+            <Route path="/search" element={<Searchsection />} />
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/SignIn" element={<SignIn />} />
+            <Route path="/FavSec" element={<FavSection />} />
+          </Routes>
+        </main>
 
-    
-    {<BrowserRouter>
-    <NavBar></NavBar>
-    <Routes>
-      {<Route path="/" element={<BookSections></BookSections> }></Route>}
-      {<Route path='/BookDetails/:id' element={<BookDetails></BookDetails>}></Route>}
-      
-      {<Route path='/search' element={<Searchsection></Searchsection>}></Route>}
-      {<Route path='/SignUp' element={<SignUp></SignUp>}></Route>}
-      {<Route path='/SignIn' element={<SignIn></SignIn>}></Route>}
-      {<Route path='/FavSec' element={<FavSection></FavSection>}></Route>}
-    </Routes>
-    <SessionChecker></SessionChecker>
-    </BrowserRouter> }
-    
-    
-    
-    
-    
-    </>
-  )
+        {/* Footer */}
+        <footer>
+          <SessionChecker />
+        </footer>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App

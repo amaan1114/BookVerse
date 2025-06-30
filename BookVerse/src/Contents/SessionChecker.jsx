@@ -18,7 +18,19 @@ function SessionChecker(){
     sessionStorage.setItem("activeSession", "true");
   }, []);
 
-  return null; // no UI
+  return (
+    <div className="container-fluid bg-dark mt-5">
+      <div className="row justify-content-center">
+    <div className="col-12" style={{color:'white'}}>
+      <h1 className="text-center">BookVerse</h1>
+    </div>
+    <div className="col-12" style={{color:'white'}}>
+      <p className="text-center">A place for readers</p>
+    </div>
+
+    </div>
+    </div>
+  )
 
 
 
