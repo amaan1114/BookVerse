@@ -6,7 +6,7 @@
 
 ## 🚀 Live Demo
 
-👉 [Coming Soon or Add Your Link Here](https://your-deployment-link.com)
+👉 https://bverse.netlify.app/
 
 ---
 
