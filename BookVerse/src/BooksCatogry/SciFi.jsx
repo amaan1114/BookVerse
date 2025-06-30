@@ -33,13 +33,13 @@ var isLoggedIn = localStorage.getItem('isLoggedIn');
   try {
     // 🔁 Toggle favorite first
     
-    await axios.post('http://localhost:3000/favS', {
+    await axios.post('https://bookverse-y7oz.onrender.com/favS', {
       mail: sendFav.toLowerCase(),
       favid: favTitle
     });
 
     // 🔁 Then fetch updated list
-    const res = await axios.get('http://localhost:3000/favS', {
+    const res = await axios.get('https://bookverse-y7oz.onrender.com/favS', {
       params: { emailG: sendFav.toLowerCase() }
     });
 
@@ -74,7 +74,7 @@ useEffect(() => {
 
 //getting fav book
 async function getfav() {
-   const res = await axios.get('http://localhost:3000/favS', {
+   const res = await axios.get('https://bookverse-y7oz.onrender.com/favS', {
       params: { emailG: sendFav.toLowerCase() }
     });
 
@@ -102,7 +102,7 @@ async function getfav() {
 
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/api/search?q=${Genre}&maxResults=20`)
+        axios.get(`https://bookverse-y7oz.onrender.com/api/search?q=${Genre}&maxResults=20`)
         .then(res=>setBooks(res.data))
         .catch(err=>console.error(err));
         

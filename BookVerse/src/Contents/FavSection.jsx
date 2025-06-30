@@ -28,13 +28,13 @@ function FavSection(){
   try {
     // 🔁 Toggle favorite first
     
-    await axios.post('http://localhost:3000/favS', {
+    await axios.post('https://bookverse-y7oz.onrender.com/favS', {
       mail: sendFav.toLowerCase(),
       favid: favTitle
     });
 
     // 🔁 Then fetch updated list
-    const res = await axios.get('http://localhost:3000/favS', {
+    const res = await axios.get('https://bookverse-y7oz.onrender.com/favS', {
       params: { emailG: sendFav.toLowerCase() }
     });
 
@@ -59,7 +59,7 @@ useEffect(() => {
 
 //getting fav book
 async function getfav() {
-   const res = await axios.get('http://localhost:3000/favS', {
+   const res = await axios.get('https://bookverse-y7oz.onrender.com/favS', {
       params: { emailG: sendFav.toLowerCase() }
     });
 
@@ -75,7 +75,7 @@ async function getfav() {
 
     
     useEffect(()=>{
-        axios.get('http://localhost:3000/FavSec',{
+        axios.get('https://bookverse-y7oz.onrender.com/FavSec',{
             params:{
                 emailF:sendFav.toLowerCase()
             }

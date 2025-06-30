@@ -30,13 +30,13 @@ var isLoggedIn = localStorage.getItem('isLoggedIn');
   try {
     // 🔁 Toggle favorite first
     
-    await axios.post('http://localhost:3000/favS', {
+    await axios.post('https://bookverse-y7oz.onrender.com/favS', {
       mail: sendFav.toLowerCase(),
       favid: favTitle
     });
 
     // 🔁 Then fetch updated list
-    const res = await axios.get('http://localhost:3000/favS', {
+    const res = await axios.get('https://bookverse-y7oz.onrender.com/favS', {
       params: { emailG: sendFav.toLowerCase() }
     });
 
@@ -62,7 +62,7 @@ useEffect(() => {
 
 //getting fav book
 async function getfav() {
-   const res = await axios.get('http://localhost:3000/favS', {
+   const res = await axios.get('https://bookverse-y7oz.onrender.com/favS', {
       params: { emailG: sendFav.toLowerCase() }
     });
 
@@ -91,7 +91,7 @@ async function getfav() {
 
         useEffect(() => {
             console.log("📡 Search API called for query:", query);
-            axios.post('http://localhost:3000/search', { q: query })
+            axios.post('https://bookverse-y7oz.onrender.com/search', { q: query })
             .then((res) => {
                 setBooks(res.data);
                 setTimeout(() => {

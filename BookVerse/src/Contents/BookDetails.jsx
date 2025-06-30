@@ -11,7 +11,7 @@ function BookDetails(){
 
   useEffect(() => {
     console.log("📡 Search API called for query:");
-    axios.get(`http://localhost:3000/api/book/${id}`)
+    axios.get(`https://bookverse-y7oz.onrender.com/api/book/${id}`)
       .then(res => setBook(res.data))
       .catch(err => console.error('Failed to fetch book:', err));
 

@@ -65,7 +65,7 @@ function validatePassword(password) {
             if(ValidateEmail(email)){
                 if(validatePassword(pass)==='Valid'){
              try{
-                const res = await axios.post('http://localhost:3000/SignUp', { Name: name ,
+                const res = await axios.post('https://bookverse-y7oz.onrender.com/SignUp', { Name: name ,
                     password:pass,
                     email:email
                 })
